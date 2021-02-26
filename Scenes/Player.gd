@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 signal activate_gravity
 
-const GRAVITY = 800
-const SPEED = 800
-const FLY = -800
+const GRAVITY = 1000
+const SPEED = 1500
+const FLY = -1500
 const GLIDE = Vector2(0, -1)
 
 var motion = Vector2()
@@ -13,7 +13,7 @@ var motion = Vector2()
 
 func _physics_process(_delta):
 	motion = move_and_slide(motion)
-	rotate(rotation)
+	
 	
 	if Input.is_action_pressed("left"):
 		motion.x = -SPEED
@@ -26,12 +26,8 @@ func _physics_process(_delta):
 	
 	if motion.y != 0:
 		emit_signal("activate_gravity")
-		$PlayerSprite.play()
 	elif motion.x !=0:
 		emit_signal("activate_gravity")
-		$PlayerSprite.play()
-	else:
-		$PlayerSprite.stop()
 	
 	if Input.get_action_strength("up"):
 		motion.y = FLY
