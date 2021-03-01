@@ -24,13 +24,16 @@ func _physics_process(_delta):
 	else:
 		motion.x = 0
 	
-	if motion.y != 0:
+	if is_on_ceiling() or motion.y !=0 or is_on_floor() or is_on_wall() :
 		emit_signal("activate_gravity")
-	elif motion.x !=0:
+	
+	if motion.x !=0:
 		emit_signal("activate_gravity")
 	
 	if Input.get_action_strength("up"):
 		motion.y = FLY
+	
+
 
 
 func _on_Player_activate_gravity():
