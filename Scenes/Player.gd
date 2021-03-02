@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 signal activate_gravity
 
-const GRAVITY = 1000
-const SPEED = 1500
-const FLY = -1500
+const GRAVITY = 700
+const SPEED = 1200
+const FLY = -1200
 const GLIDE = Vector2(0, -1)
 
 var motion = Vector2()
