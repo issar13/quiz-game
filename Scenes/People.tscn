@@ -22,7 +22,7 @@ collision_layer = 2
 collision_mask = 9
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="PeopleSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -6, -0.5 )
 scale = Vector2( 0.855072, 0.985915 )
 frames = SubResource( 1 )
@@ -36,4 +36,3 @@ shape = SubResource( 2 )
 [node name="Pickup" type="RayCast2D" parent="."]
 position = Vector2( -6, 6 )
 rotation = 3.14159
-enabled = true

@@ -1384,12 +1384,9 @@ rotation = 3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
 
-[node name="release" type="Position2D" parent="Dropoff"]
-position = Vector2( 1269.96, -1137.03 )
-
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource( 67 )]
-position = Vector2( -300, -464 )
-[connection signal="disable" from="." to="Rescues/People" method="_on_Level_1_disable"]
-[connection signal="picked" from="Rescues/People" to="." method="_on_People_picked"]
+position = Vector2( -1097.62, -529.054 )
+[connection signal="enable" from="." to="Rescues/People" method="_on_Level_1_enable"]
+[connection signal="picked" from="Rescues/People" to="." method="_on_picked"]
