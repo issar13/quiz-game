@@ -1,5 +1,5 @@
 extends KinematicBody2D
-#class_name Instance
+
 
 signal activate_gravity
 
