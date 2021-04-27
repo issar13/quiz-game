@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Assets/mappack/PNG/mapTile_007.png" type="Texture" id=1]
 [ext_resource path="res://Assets/background-elements-redux-fix/Backgrounds/backgroundColorForest.png" type="Texture" id=2]
@@ -71,6 +71,7 @@
 [ext_resource path="res://Scenes/People/People2.tscn" type="PackedScene" id=69]
 [ext_resource path="res://Scenes/People/People4.tscn" type="PackedScene" id=70]
 [ext_resource path="res://Scenes/People/People3.tscn" type="PackedScene" id=71]
+[ext_resource path="res://Camera/Camera2D.tscn" type="PackedScene" id=72]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -1427,11 +1428,14 @@ cast_to = Vector2( 0, 200 )
 
 [node name="Player" parent="Player" instance=ExtResource( 67 )]
 position = Vector2( -1097.62, -529.054 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 72 )]
+position = Vector2( -567.872, -474.64 )
+[connection signal="enable" from="." to="Rescues/People2" method="_on_Level_1_enable"]
 [connection signal="enable" from="." to="Rescues/People3" method="_on_Level_1_enable"]
+[connection signal="enable" from="." to="Rescues/People" method="_on_Level_1_enable"]
 [connection signal="enable" from="." to="Rescues/People4" method="_on_Level_1_enable"]
 [connection signal="enable" from="." to="Rescues/People5" method="_on_Level_1_enable"]
-[connection signal="enable" from="." to="Rescues/People2" method="_on_Level_1_enable"]
-[connection signal="enable" from="." to="Rescues/People" method="_on_Level_1_enable"]
 [connection signal="picked" from="Rescues/People" to="." method="_on_people_picked"]
 [connection signal="picked" from="Rescues/People2" to="." method="_on_people_picked"]
 [connection signal="picked" from="Rescues/People3" to="." method="_on_people_picked"]
